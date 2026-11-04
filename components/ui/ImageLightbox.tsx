@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { X, ZoomIn, ZoomOut, RotateCw } from 'lucide-react';
 
 interface ImageLightboxProps {
@@ -41,9 +42,11 @@ export function ImageLightbox({ src, alt, isOpen, onClose }: ImageLightboxProps)
 
   const handleZoomIn = () => setScale((prev) => Math.min(prev + 0.25, 3));
   const handleZoomOut = () => setScale((prev) => Math.max(prev - 0.25, 0.5));
-  const handleRotate = () => setRotation((prev) => prev + 90);
+  const handleRotate = () => setRotation((prev) => (prev + 90) % 360);
 
-  return (
+  const isQuarterTurn = rotation % 180 !== 0;
+
+  return createPortal(
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/90"
       onClick={onClose}
@@ -111,13 +114,14 @@ export function ImageLightbox({ src, alt, isOpen, onClose }: ImageLightboxProps)
           style={{
             transform: `scale(${scale}) rotate(${rotation}deg)`,
             transition: 'transform 0.2s ease-out',
-            maxWidth: '100%',
-            maxHeight: '100%',
+            maxWidth: isQuarterTurn ? 'calc(100vh - 64px)' : '100%',
+            maxHeight: isQuarterTurn ? 'calc(100vw - 64px)' : '100%',
           }}
           className="object-contain"
         />
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 
