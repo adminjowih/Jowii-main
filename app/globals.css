@@ -1263,3 +1263,591 @@ main > div > div:first-child[class*="pt-32"] {
   .institutional-home .institutional-section--compact-top { padding-top: 32px !important; }
   .institutional-home .institutional-section + .institutional-section { padding-top: 40px; }
 }
+
+.institutional-home {
+  --home-radius: 22px;
+  --home-shadow: 0 18px 48px rgba(21, 33, 30, 0.08);
+  --home-card: rgba(255, 254, 250, 0.88);
+  font-family: var(--font-sans);
+}
+
+.institutional-home :is(h1, h2, h3) {
+  font-family: var(--font-sans);
+  letter-spacing: -0.045em;
+}
+
+.institutional-home .institutional-container {
+  width: min(1280px, calc(100% - 80px));
+}
+
+.institutional-home .institutional-hero {
+  width: 100%;
+  height: clamp(390px, 49vw, 660px);
+  min-height: 0;
+  background: #10251d;
+}
+
+.institutional-home .institutional-hero__grid {
+  gap: 8px;
+  padding: 8px;
+}
+
+.institutional-home .institutional-hero__grid-cell {
+  border-radius: 13px;
+  box-shadow: none;
+}
+
+.institutional-home .institutional-hero__image-note {
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  background: rgba(15, 29, 23, 0.56);
+  backdrop-filter: blur(14px);
+}
+
+.institutional-home .institutional-hero-content {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(76px, 9vw, 124px);
+  background:
+    radial-gradient(ellipse at 86% 0%, rgba(74, 128, 99, 0.23), transparent 38%),
+    linear-gradient(135deg, #10271f, #173d30 68%, #1d4736);
+}
+
+.institutional-home .institutional-hero-content h1 {
+  max-width: 970px;
+  font-size: clamp(48px, 7.4vw, 96px);
+  font-weight: 650;
+  letter-spacing: -0.075em;
+  line-height: 0.98;
+}
+
+.institutional-home .institutional-hero__intro {
+  max-width: 700px;
+  margin-top: 28px;
+  font-size: clamp(16px, 1.5vw, 19px);
+  line-height: 1.65;
+}
+
+.institutional-home .institutional-hero__actions {
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.institutional-home .institutional-button {
+  min-height: 48px;
+  padding-inline: 19px;
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  letter-spacing: -0.01em;
+}
+
+.institutional-home .institutional-button--gold {
+  background: #d7bb8d;
+}
+
+.institutional-home .institutional-button--gold:hover {
+  background: #e5cea6;
+  color: var(--ink);
+}
+
+.institutional-home .institutional-hero__note {
+  margin-top: 18px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.institutional-home .institutional-principles {
+  padding-block: 18px;
+  border: 0;
+  background: #fff;
+}
+
+.institutional-home .institutional-principles__grid {
+  gap: 10px;
+}
+
+.institutional-home .institutional-principles__grid span,
+.institutional-home .institutional-principles__grid span + span {
+  min-height: 72px;
+  padding: 14px 16px;
+  border: 1px solid rgba(21, 33, 30, 0.08);
+  border-radius: 15px;
+  background: #f7f8f5;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.institutional-home .institutional-principles__grid svg {
+  color: var(--green);
+}
+
+.institutional-home .institutional-section,
+.institutional-home .institutional-news {
+  padding-block: clamp(76px, 9vw, 116px);
+}
+
+.institutional-home .institutional-section + .institutional-section {
+  padding-top: clamp(64px, 8vw, 104px);
+}
+
+.institutional-home .institutional-section--compact-top {
+  padding-top: 48px !important;
+}
+
+.institutional-home .institutional-section--paper {
+  background: #f7f8f5;
+}
+
+.institutional-home .institutional-section--sage,
+.institutional-home .institutional-section--gallery {
+  background: #edf1eb;
+}
+
+.institutional-home .institutional-section--ink {
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(58, 103, 78, 0.22), transparent 42%),
+    #142a21;
+}
+
+.institutional-home .institutional-section-heading {
+  max-width: 850px;
+  margin-bottom: 48px;
+}
+
+.institutional-home .institutional-section-heading h2 {
+  font-size: clamp(38px, 5vw, 64px);
+  font-weight: 650;
+  letter-spacing: -0.065em;
+  line-height: 1;
+}
+
+.institutional-home .institutional-section-heading--split {
+  grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.7fr);
+  gap: clamp(30px, 7vw, 94px);
+}
+
+.institutional-home .institutional-section-heading > p:last-child {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.institutional-home .institutional-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  letter-spacing: 0.13em;
+}
+
+.institutional-home .institutional-expandable {
+  overflow: hidden;
+  border: 1px solid rgba(21, 33, 30, 0.1);
+  border-radius: var(--home-radius);
+  background: var(--home-card);
+  box-shadow: var(--home-shadow);
+}
+
+.institutional-home .institutional-expandable__item,
+.institutional-home .institutional-expandable__item:last-child {
+  border-color: rgba(21, 33, 30, 0.09);
+}
+
+.institutional-home .institutional-expandable__trigger {
+  min-height: 80px;
+  align-items: center;
+  padding: 20px 24px;
+  transition: background-color 180ms ease;
+}
+
+.institutional-home .institutional-expandable__trigger:hover,
+.institutional-home .institutional-expandable__item.is-open .institutional-expandable__trigger {
+  background: rgba(230, 236, 228, 0.48);
+}
+
+.institutional-home .institutional-expandable__heading strong {
+  font-family: var(--font-sans);
+  font-size: clamp(17px, 2vw, 21px);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+}
+
+.institutional-home .institutional-expandable__content {
+  max-width: 900px;
+  padding: 0 28px 28px 84px;
+}
+
+.institutional-home .institutional-pillar-grid,
+.institutional-home .institutional-program-grid,
+.institutional-home .institutional-cde-grid {
+  gap: 14px;
+  border: 0;
+}
+
+.institutional-home .institutional-pillar,
+.institutional-home .institutional-program,
+.institutional-home .institutional-cde {
+  min-width: 0;
+  min-height: 0;
+  padding: 24px;
+  border: 1px solid rgba(21, 33, 30, 0.08);
+  border-radius: 18px;
+  background: var(--home-card);
+  box-shadow: 0 12px 32px rgba(21, 33, 30, 0.045);
+}
+
+.institutional-home .institutional-pillar + .institutional-pillar,
+.institutional-home .institutional-cde + .institutional-cde {
+  border-left: 1px solid rgba(21, 33, 30, 0.08);
+}
+
+.institutional-home .institutional-pillar h3,
+.institutional-home .institutional-corridor h3,
+.institutional-home .institutional-program h3,
+.institutional-home .institutional-cde h3,
+.institutional-home .institutional-gallery__item figcaption strong {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+}
+
+.institutional-home .institutional-pillar h3 {
+  margin-top: 30px;
+  font-size: 22px;
+}
+
+.institutional-home .institutional-corridor-list {
+  overflow: hidden;
+  border: 1px solid rgba(21, 33, 30, 0.1);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.56);
+}
+
+.institutional-home .institutional-corridor {
+  min-height: 88px;
+  padding-inline: 18px;
+  border-color: rgba(21, 33, 30, 0.09);
+  transition: background-color 180ms ease;
+}
+
+.institutional-home .institutional-corridor:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.institutional-home .institutional-corridor-figure,
+.institutional-home .institutional-gallery__item {
+  overflow: hidden;
+  border: 1px solid rgba(21, 33, 30, 0.08);
+  border-radius: var(--home-radius);
+  background: #fff;
+  box-shadow: var(--home-shadow);
+}
+
+.institutional-home .institutional-corridor-figure img,
+.institutional-home .institutional-gallery__image {
+  overflow: hidden;
+}
+
+.institutional-home .institutional-program-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.institutional-home .institutional-program h3 {
+  margin-top: 26px;
+  font-size: 18px;
+}
+
+.institutional-home .institutional-partnership-grid {
+  gap: 14px;
+}
+
+.institutional-home .institutional-partnership-card {
+  position: relative;
+  min-height: 270px;
+  padding: 25px;
+  border: 1px solid rgba(255, 254, 250, 0.12);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.045);
+  transition: background-color 200ms ease, border-color 200ms ease, transform 200ms ease;
+}
+
+.institutional-home .institutional-partnership-card:hover {
+  border-color: rgba(211, 174, 117, 0.42);
+  background: rgba(255, 255, 255, 0.075);
+  transform: translateY(-4px);
+}
+
+.institutional-home .institutional-partnership-card__icon {
+  border-radius: 15px;
+}
+
+.institutional-home .institutional-partnership-card__type {
+  border-radius: 999px;
+}
+
+.institutional-home .institutional-layer {
+  min-height: 82px;
+  padding-inline: 14px;
+  border-radius: 10px;
+}
+
+.institutional-home .institutional-donation-banner,
+.institutional-home .institutional-adfa-strip,
+.institutional-home .institutional-accountability {
+  border-radius: 18px;
+}
+
+.institutional-home .institutional-donation-banner {
+  padding: 25px;
+  background: #f0f3ed;
+}
+
+.institutional-home .institutional-donation-banner__icon {
+  border-radius: 14px;
+}
+
+.institutional-home .institutional-adfa-strip {
+  border: 1px solid rgba(21, 33, 30, 0.07);
+}
+
+.institutional-home .institutional-gallery {
+  gap: 18px;
+}
+
+.institutional-home .institutional-gallery__item figcaption strong {
+  font-size: 18px;
+}
+
+.institutional-home .institutional-news {
+  border-top: 1px solid rgba(21, 33, 30, 0.08);
+  background: #fffefa;
+}
+
+.institutional-home .institutional-news__tabs button {
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.institutional-home .institutional-news__tabs button.is-active {
+  background: var(--green-deep);
+}
+
+.institutional-home .institutional-news__featured-img {
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--home-radius);
+}
+
+.institutional-home .institutional-news__featured h3,
+.institutional-home .institutional-news__item h3 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.institutional-home .institutional-news__featured h3 {
+  font-size: clamp(21px, 2.3vw, 27px);
+}
+
+.institutional-home .institutional-news__thumb {
+  border: 0;
+  border-radius: 10px;
+}
+
+.institutional-home .institutional-news__more,
+.institutional-home .institutional-text-link {
+  font-family: var(--font-sans);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.institutional-home .institutional-founder {
+  background:
+    radial-gradient(ellipse at 90% 0%, rgba(81, 132, 101, 0.3), transparent 45%),
+    var(--green-deep);
+}
+
+.institutional-home .institutional-subscribe {
+  background: #edf1eb;
+}
+
+.institutional-home .institutional-subscribe__form input {
+  border-radius: 10px;
+}
+
+.institutional-home .institutional-subscribe__form button {
+  border-radius: 999px;
+}
+
+.institutional-home :is(a, button, summary):focus-visible {
+  outline: 3px solid #3476cf;
+  outline-offset: 4px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .institutional-home .institutional-pillar,
+  .institutional-home .institutional-program,
+  .institutional-home .institutional-cde,
+  .institutional-home .institutional-gallery__item {
+    transition: transform 220ms var(--ease-out), box-shadow 220ms ease;
+  }
+
+  .institutional-home .institutional-pillar:hover,
+  .institutional-home .institutional-program:hover,
+  .institutional-home .institutional-cde:hover,
+  .institutional-home .institutional-gallery__item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 44px rgba(21, 33, 30, 0.1);
+  }
+}
+
+@media (max-width: 1000px) {
+  .institutional-home .institutional-principles__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .institutional-home .institutional-pillar-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .institutional-home .institutional-container {
+    width: calc(100% - 36px);
+  }
+
+  .institutional-home .institutional-hero {
+    height: clamp(250px, 64vw, 390px);
+    min-height: 250px;
+  }
+
+  .institutional-home .institutional-hero-content {
+    padding-block: 58px 54px;
+  }
+
+  .institutional-home .institutional-hero-content h1 {
+    font-size: clamp(42px, 11vw, 62px);
+    line-height: 1;
+  }
+
+  .institutional-home .institutional-hero__intro {
+    margin-top: 18px;
+    font-size: 15px;
+  }
+
+  .institutional-home .institutional-hero__actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .institutional-home .institutional-section,
+  .institutional-home .institutional-news {
+    padding-block: 56px;
+  }
+
+  .institutional-home .institutional-section + .institutional-section {
+    padding-top: 48px;
+  }
+
+  .institutional-home .institutional-section-heading {
+    margin-bottom: 30px;
+  }
+
+  .institutional-home .institutional-section-heading h2 {
+    font-size: clamp(35px, 10vw, 48px);
+  }
+
+  .institutional-home .institutional-section-heading--split {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .institutional-home .institutional-section-heading--split > p:last-child {
+    justify-self: start;
+  }
+
+  .institutional-home .institutional-principles {
+    padding-block: 12px;
+  }
+
+  .institutional-home .institutional-principles__grid {
+    gap: 8px;
+  }
+
+  .institutional-home .institutional-principles__grid span,
+  .institutional-home .institutional-principles__grid span + span {
+    min-height: 76px;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+    font-size: 10px;
+  }
+
+  .institutional-home .institutional-expandable__trigger {
+    grid-template-columns: 32px minmax(0, 1fr) 24px;
+    gap: 10px;
+    padding: 17px 14px;
+  }
+
+  .institutional-home .institutional-expandable__content {
+    padding: 0 16px 22px 56px;
+  }
+
+  .institutional-home .institutional-pillar-grid,
+  .institutional-home .institutional-program-grid,
+  .institutional-home .institutional-cde-grid,
+  .institutional-home .institutional-gallery {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .institutional-home .institutional-pillar,
+  .institutional-home .institutional-program,
+  .institutional-home .institutional-cde {
+    padding: 20px;
+  }
+
+  .institutional-home .institutional-pillar + .institutional-pillar,
+  .institutional-home .institutional-cde + .institutional-cde {
+    border-left: 1px solid rgba(21, 33, 30, 0.08);
+  }
+
+  .institutional-home .institutional-corridor {
+    grid-template-columns: 34px minmax(0, 1fr) 18px;
+    gap: 10px;
+    padding-inline: 12px;
+  }
+
+  .institutional-home .institutional-corridor h3 {
+    font-size: 17px;
+  }
+
+  .institutional-home .institutional-corridor p {
+    font-size: 11px;
+  }
+
+  .institutional-home .institutional-partnership-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .institutional-home .institutional-partnership-card {
+    min-height: 235px;
+  }
+
+  .institutional-home .institutional-gallery__image img {
+    aspect-ratio: 1.55;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .institutional-home *,
+  .institutional-home *::before,
+  .institutional-home *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
