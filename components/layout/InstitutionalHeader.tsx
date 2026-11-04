@@ -143,17 +143,6 @@ export function InstitutionalHeader() {
               ))}
             </div>
 
-            <Link
-              className="institutional-header__discord"
-              href={siteData.config.discordCommunity}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <SocialIcon name="discord" size={16} />
-              <span>Join Discord Community</span>
-              <ArrowUpRight aria-hidden="true" size={14} />
-            </Link>
-
             {/* Mobile Menu Toggle */}
             <button
               className="institutional-menu-toggle ml-auto w-10 h-10 items-center justify-center text-white hover:bg-white/10 transition-colors"

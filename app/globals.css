@@ -523,9 +523,6 @@ h2[id] { scroll-margin-top: 110px; }
 .institutional-header__actions { display: flex; align-items: center; gap: 8px; }
 .institutional-header__donate { display: inline-flex; min-height: 39px; align-items: center; justify-content: center; gap: 8px; padding: 0 13px; background: var(--white); color: var(--green); font-size: 11px; font-weight: 700; text-decoration: none; white-space: nowrap; }
 .institutional-header__donate:hover { background: #2dd4bf; color: var(--white); }
-.institutional-header__discord { position: absolute; right: 0; display: inline-flex; min-height: 40px; align-items: center; justify-content: center; gap: 8px; padding: 0 15px; border: 1px solid #7280f4; border-radius: 999px; background: #5865f2; color: var(--white); font-size: 11px; font-weight: 700; text-decoration: none; white-space: nowrap; transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease; }
-.institutional-header__discord:hover { transform: translateY(-1px); border-color: #8993ff; background: #4752c4; }
-.institutional-header__discord:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
 .institutional-top-actions { display: none; }
 .institutional-primary-nav { display: none; }
 .institutional-menu-toggle { display: flex; border: 1px solid rgba(255, 255, 255, 0.3); background: transparent; cursor: pointer; }
@@ -539,10 +536,6 @@ h2[id] { scroll-margin-top: 110px; }
 
 @media (max-width: 1024px) {
   .institutional-header__donate:not([href="/donate"]) { display: none; }
-}
-@media (max-width: 1600px) {
-  .institutional-header__discord { position: static; margin-left: auto; }
-  .institutional-header__discord + .institutional-menu-toggle { margin-left: 8px !important; }
 }
 .institutional-header__menu-toggle { display: none; width: 42px; height: 42px; place-items: center; border: 1px solid var(--line); background: transparent; color: var(--ink); cursor: pointer; }
 .institutional-mobile-menu { position: fixed; z-index: 39; inset: 76px 0 0; display: flex; flex-direction: column; padding: 12px 24px 28px; overflow-y: auto; background: var(--paper); }
@@ -837,8 +830,6 @@ h2[id] { scroll-margin-top: 110px; }
   .institutional-brand__text strong { font-size: 18px; }
   .institutional-brand__text small { max-width: 185px; font-size: 10px; }
   .institutional-nav { display: none; }
-  .institutional-header__discord { position: static; min-height: 38px; gap: 6px; margin-left: auto; padding-inline: 10px; font-size: 10px; }
-  .institutional-header__discord svg:last-child { display: none; }
   .institutional-header__actions { gap: 8px; }
   .institutional-header__donate { min-height: 37px; padding-inline: 10px; font-size: 10px; }
   .institutional-header__menu-toggle { display: grid; width: 38px; height: 38px; }
