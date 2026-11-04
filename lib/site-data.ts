@@ -808,6 +808,8 @@ export const siteData = {
     { platform: 'LinkedIn', label: 'LinkedIn', href: 'https://www.linkedin.com/in/reuben-oduk', icon: 'linkedin' },
     { platform: 'YouTube', label: 'YouTube', href: 'https://youtube.com/@jowihafrica', icon: 'youtube' },
     { platform: 'Instagram', label: 'Instagram', href: 'https://instagram.com/jowihafrica', icon: 'instagram' },
+    { platform: 'GitHub', label: 'ASTA OS on GitHub', href: 'https://github.com/ASTA-OS', icon: 'github' },
+    { platform: 'Discord', label: 'Join ASTA OS on Discord', href: 'https://discord.gg/E6VpXqV2W', icon: 'discord' },
   ],
   resources: {
     keyDocuments: [
