@@ -1248,7 +1248,7 @@ export function InstitutionalHome() {
           <div className="shadow-2xl relative overflow-hidden" style={{ borderRadius: '0', background: '#060b08', border: '1px solid rgba(255, 254, 250, 0.15)' }}>
             {/* Hero Image Banner with Background Blending */}
             <div
-              className="relative w-full overflow-hidden flex items-center justify-center h-[260px] sm:h-[380px] md:h-[460px] lg:h-[500px]"
+              className="relative w-full aspect-[2/1] overflow-hidden flex items-center justify-center"
               style={{ background: '#060b08' }}
             >
               <Image
@@ -1257,15 +1257,6 @@ export function InstitutionalHome() {
                 fill
                 sizes="(max-width: 1280px) 100vw, 1200px"
                 style={{ objectFit: 'contain', objectPosition: 'center' }}
-              />
-              <div
-                style={{
-                  position: 'absolute',
-                  inset: 0,
-                  pointerEvents: 'none',
-                  background:
-                    'radial-gradient(ellipse at center, transparent 35%, rgba(6, 11, 8, 0.5) 70%, #060b08 96%), linear-gradient(to bottom, #060b08 0%, transparent 10%, transparent 90%, #060b08 100%), linear-gradient(to right, #060b08 0%, transparent 8%, transparent 92%, #060b08 100%)',
-                }}
               />
               <p className="absolute bottom-2.5 sm:bottom-3 right-4 sm:right-6 text-[9px] sm:text-[10px] font-mono tracking-wider uppercase text-white/70 z-10 pointer-events-none block">
                 ILLUSTRATIVE SUPER APP CONCEPT · NOT ASTA OS
@@ -1306,9 +1297,19 @@ export function InstitutionalHome() {
                   <span className="w-2 h-2 rounded-full bg-amber-400" />
                   <span>Concept showcase · independently architected from ASTA OS</span>
                 </div>
-                <Link href="/ecosystem#super-app" className="institutional-text-link">
-                  View Super App Architecture <ArrowRight aria-hidden="true" size={15} />
-                </Link>
+                <div className="flex flex-wrap items-center gap-5">
+                  <Link href="/ecosystem#super-app" className="institutional-text-link">
+                    View Super App Architecture <ArrowRight aria-hidden="true" size={15} />
+                  </Link>
+                  <a
+                    href="https://asta.jowihafrica.org"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="institutional-button institutional-button--gold"
+                  >
+                    Open ASTA OS website <ArrowUpRight aria-hidden="true" size={15} />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
