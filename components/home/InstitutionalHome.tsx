@@ -809,6 +809,8 @@ export function InstitutionalHome() {
         </div>
       </section>
 
+      {/* Detailed pre-launch and legal setup information is intentionally omitted from the public homepage. */}
+      {false && (
       <section className="institutional-section institutional-section--paper institutional-section--compact-top" id="prelaunch">
         <div className="institutional-container">
           <div className="institutional-section-heading">
@@ -954,6 +956,7 @@ export function InstitutionalHome() {
           </div>
         </div>
       </section>
+      )}
 
       <section className="institutional-section institutional-section--ink">
         <div className="institutional-container institutional-architecture">
