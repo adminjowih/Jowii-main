@@ -290,6 +290,9 @@ button, input, select, textarea { font: inherit; }
 .source-document__list .source-document__nested { margin-left: 24px; }
 .corridor-page__layout { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 56px; align-items: start; }
 .corridor-page__source { min-width: 0; }
+.corridor-page__summary { max-width: 820px; }
+.corridor-page__summary-copy { margin: 0; color: var(--ink-soft); font-size: 18px; line-height: 1.75; }
+.corridor-page__summary .corridor-page__return { margin: 24px 0 0; }
 .corridor-page__aside { position: sticky; top: 24px; border: 1px solid var(--line); background: var(--white); }
 .corridor-page__aside img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; }
 .corridor-page__aside p { margin: 0; padding: 14px 16px; color: var(--muted); font-size: 12px; line-height: 1.55; }

@@ -42,7 +42,7 @@ export const corridorRanges: Record<string, { title: string; start: string; end:
   digital: { title: 'Digital Corridor', start: 'CORRIDOR 4: DIGITAL CORRIDOR', end: 'CORRIDOR 5: PAYMENT CORRIDOR' },
   payments: { title: 'Payment Corridor', start: 'CORRIDOR 5: PAYMENT CORRIDOR', end: 'CORRIDOR 6: SERVICE CORRIDOR' },
   services: { title: 'Service Corridor', start: 'CORRIDOR 6: SERVICE CORRIDOR', end: 'CORRIDOR 7: SPACE CORRIDOR' },
-  space: { title: 'Space Corridor', start: 'CORRIDOR 7: SPACE CORRIDOR', end: 'NEW DAWN CITY' },
+  space: { title: 'Space Corridor', start: 'CORRIDOR 7: SPACE CORRIDOR', end: 'JOWIH AFRICA HEALTH FUND (AHF)' },
 };
 
 // Line-anchored heading search: the heading must start a line, so mid-sentence
