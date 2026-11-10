@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { ArrowUpRight, Mail, MapPin } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 import { SocialIcon } from '@/components/icons/SocialIcons';
 import { siteData } from '@/lib/site-data';
 
@@ -91,17 +91,6 @@ export function Footer() {
               Engagement
             </p>
             <ul className="space-y-2 text-sm text-neutral-400">
-              <li>
-                <Link
-                  href={siteData.config.whatsappCommunity}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition-colors flex items-center gap-1"
-                >
-                  <span>Join WhatsApp Community</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-[#FF5000]" />
-                </Link>
-              </li>
               <li>
                 <Link href={siteData.config.discordCommunity} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                   Join ASTA OS on Discord
