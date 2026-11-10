@@ -1066,16 +1066,9 @@ export function InstitutionalHome() {
           <div className="institutional-partnership-grid">
             {[
               {
-                title: 'Support Pre-Launch',
-                description: 'Support the pre-launch structural setup. Your contribution helps fund legal registration, trust establishment, and initial organizational costs to build the Foundation\'s independent governance structure.',
-                type: 'Contribution',
-                icon: CircleDollarSign,
-                href: '/donate'
-              },
-              {
-                title: 'Sponsor the Launch',
-                description: 'Support pre-launch and full launch events through financial sponsorship, in-kind contributions, venue provision, production support, or media collaboration. Sponsorship provides visibility and helps create impactful launch experiences.',
-                type: 'Sponsorship',
+                title: 'Partner Now',
+                description: 'Partner with Jowih through event sponsorship, in-kind contributions, venue provision, production support, or media collaboration.',
+                type: 'Partnership',
                 icon: Award,
                 href: '/partner/sponsor'
               },

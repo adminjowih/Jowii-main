@@ -2,24 +2,15 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowLeft, Building2, Users, Code, Award, Globe, Handshake, Sparkles, Rocket, Heart, CircleDollarSign, ShieldCheck, HeartHandshake, Landmark, Newspaper, Construction } from 'lucide-react';
+import { ArrowLeft, Building2, Users, Code, Award, Globe, Handshake, Sparkles, Rocket, Heart, ShieldCheck, HeartHandshake, Landmark, Newspaper, Construction } from 'lucide-react';
 
 export default function PartnerPage() {
   const partnershipOptions = [
     {
-      id: 'donate',
-      title: 'Support Pre-Launch',
-      description: 'Support the pre-launch structural setup. Your contribution helps fund legal registration, trust establishment, and initial organizational costs to build the Foundation\'s independent governance structure.',
-      type: 'Contribution',
-      icon: CircleDollarSign,
-      href: '/donate',
-      color: 'var(--brass)'
-    },
-    {
       id: 'sponsor',
-      title: 'Sponsor the Launch',
-      description: 'Support pre-launch and full launch events through financial sponsorship, in-kind contributions, venue provision, production support, or media collaboration. Sponsorship provides visibility and helps create impactful launch experiences.',
-      type: 'Sponsorship',
+      title: 'Partner Now',
+      description: 'Partner with Jowih through event sponsorship, in-kind contributions, venue provision, production support, or media collaboration.',
+      type: 'Partnership',
       icon: Award,
       href: '/partner/sponsor',
       color: 'var(--brass)'

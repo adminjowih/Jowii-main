@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Mail, Menu, Phone, X } from 'lucide-react';
+import { SocialIcon } from '@/components/icons/SocialIcons';
 import { gmailComposeUrl, siteData } from '@/lib/site-data';
 
 const navigation = [
@@ -73,6 +74,21 @@ export function InstitutionalHeader() {
             Menu
           </button>
           <div className="flex items-center gap-4">
+            <div className="hidden items-center gap-3 sm:flex" role="group" aria-label="Social media links">
+              {siteData.socialMedia.map((social) => (
+                <a
+                  key={social.platform}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  title={social.label}
+                  className="inline-flex h-8 w-5 items-center justify-center text-white/85 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                >
+                  <SocialIcon name={social.icon} size={16} />
+                </a>
+              ))}
+            </div>
             <a
               href={gmailComposeUrl()}
               target="_blank"
@@ -106,6 +122,21 @@ export function InstitutionalHeader() {
               <Phone aria-hidden="true" size={16} />
               {siteData.config.phone}
             </a>
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-3 border-t border-neutral-200 py-4">
+              {siteData.socialMedia.map((social) => (
+                <a
+                  key={social.platform}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  className="inline-flex items-center gap-2 text-sm font-medium text-neutral-700 hover:text-[#1a4d2e]"
+                >
+                  <SocialIcon name={social.icon} size={16} />
+                  <span>{social.platform}</span>
+                </a>
+              ))}
+            </div>
           </div>
         </nav>
       )}
