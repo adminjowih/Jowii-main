@@ -29,7 +29,6 @@ export function middleware(request: NextRequest) {
     '/credits',
     '/governance',
     '/horizon-2045',
-    '/news',
     '/search',
   ];
   const isHiddenSection = hiddenSections.some(
