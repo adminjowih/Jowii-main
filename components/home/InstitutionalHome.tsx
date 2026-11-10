@@ -31,7 +31,7 @@ import { InstitutionalNews } from '@/components/home/InstitutionalNews';
 import { InstitutionalExpandable, type ExpandableItem } from '@/components/ui/InstitutionalExpandable';
 import { InstitutionalHeroSlideshow } from '@/components/home/InstitutionalHeroSlideshow';
 import { LightboxImage } from '@/components/ui/ImageLightbox';
-import { siteData } from '@/lib/site-data';
+import { gmailComposeUrl, siteData } from '@/lib/site-data';
 
 const pillars = [
   {
@@ -767,7 +767,12 @@ export function InstitutionalHome() {
             <Link className="institutional-button institutional-button--gold" href="/donate">
               Pre-launch support <ArrowUpRight aria-hidden="true" size={17} />
             </Link>
-            <a className="institutional-button institutional-button--outline" href={`mailto:${siteData.config.fallbackEmail}`}>
+            <a
+              className="institutional-button institutional-button--outline"
+              href={gmailComposeUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Mail aria-hidden="true" size={17} /> Contact us
             </a>
             <Link className="institutional-button institutional-button--outline" href="/partner">
@@ -1317,6 +1322,7 @@ export function InstitutionalHome() {
 
       </section>
 
+      {false && (
       <section className="institutional-section institutional-section--gallery">
         <div className="institutional-container">
           <div className="institutional-section-heading institutional-section-heading--split">
@@ -1338,6 +1344,7 @@ export function InstitutionalHome() {
           <p className="institutional-image-disclosure"><Sparkles aria-hidden="true" size={15} /> Image disclosure: The supplied project renderings are AI-assisted conceptual illustrations. They depict proposals, not built or operational assets.</p>
         </div>
       </section>
+      )}
 
       <section className="institutional-founder">
         <div className="institutional-container institutional-founder__inner">
@@ -1359,7 +1366,12 @@ export function InstitutionalHome() {
         <div className="institutional-container institutional-cta-row">
           <div><p className="institutional-eyebrow">CONTACT</p><h2>Let&apos;s start a conversation.</h2></div>
           <div className="institutional-cta-row__actions">
-            <a className="institutional-button institutional-button--dark" href={`mailto:${siteData.config.fallbackEmail}`}>
+            <a
+              className="institutional-button institutional-button--dark"
+              href={gmailComposeUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Mail aria-hidden="true" size={17} /> {siteData.config.fallbackEmail}
             </a>
             <a className="institutional-button institutional-button--light" href={`tel:${siteData.config.phone}`}>

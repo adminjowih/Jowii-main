@@ -13,6 +13,17 @@
     return name === 'ticket' ? '🎟' : '↗';
   }
 
+  function gmailComposeUrl(subject, body) {
+    const params = new URLSearchParams({
+      view: 'cm',
+      fs: '1',
+      to: data.config.fallbackEmail,
+    });
+    if (subject) params.set('su', subject);
+    if (body) params.set('body', body);
+    return `https://mail.google.com/mail/?${params.toString()}`;
+  }
+
   function openScreen(name, hash) {
     document.body.dataset.screen = name;
     qsa('[data-screen-panel]').forEach((panel) => {
@@ -328,9 +339,9 @@
     if (!form.reportValidity()) return;
     const payload = Object.fromEntries(new FormData(form).entries());
     payload.submittedAt = new Date().toISOString();
-    const subject = encodeURIComponent(`Jowih launch: ${payload.interest}`);
-    const body = encodeURIComponent(Object.entries(payload).map(([k, v]) => `${k}: ${v}`).join('\n'));
-    status.innerHTML = `Your request is ready. <a href="mailto:${data.config.fallbackEmail}?subject=${subject}&body=${body}">Send it to the Jowih team by email</a>.`;
+    const subject = `Jowih launch: ${payload.interest}`;
+    const body = Object.entries(payload).map(([k, v]) => `${k}: ${v}`).join('\n');
+    status.innerHTML = `Your request is ready. <a href="${gmailComposeUrl(subject, body)}" target="_blank" rel="noopener noreferrer">Send it to the Jowih team by email</a>.`;
   }
 
   function renderNewsletter() {
@@ -340,9 +351,9 @@
       if (!form.reportValidity()) return;
       const payload = Object.fromEntries(new FormData(form).entries());
       payload.interest = 'General update';
-      const subject = encodeURIComponent('Jowih launch list');
-      const body = encodeURIComponent(Object.entries(payload).map(([k, v]) => `${k}: ${v}`).join('\n'));
-      qs('[data-newsletter-status]').innerHTML = `Ready. <a href="mailto:${data.config.fallbackEmail}?subject=${subject}&body=${body}">Send the subscription note</a>.`;
+      const subject = 'Jowih launch list';
+      const body = Object.entries(payload).map(([k, v]) => `${k}: ${v}`).join('\n');
+      qs('[data-newsletter-status]').innerHTML = `Ready. <a href="${gmailComposeUrl(subject, body)}" target="_blank" rel="noopener noreferrer">Send the subscription note</a>.`;
     });
   }
 

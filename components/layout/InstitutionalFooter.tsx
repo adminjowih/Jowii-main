@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Mail, Phone } from 'lucide-react';
-import { siteData } from '@/lib/site-data';
+import { gmailComposeUrl, siteData } from '@/lib/site-data';
 
 export function InstitutionalFooter() {
   return (
@@ -16,7 +16,9 @@ export function InstitutionalFooter() {
         </div>
         <div className="flex flex-col gap-3 text-sm sm:items-end">
           <a
-            href={`mailto:${siteData.config.fallbackEmail}`}
+            href={gmailComposeUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 font-medium text-[#1a4d2e] hover:underline"
           >
             <Mail aria-hidden="true" size={15} />

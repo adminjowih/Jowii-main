@@ -2,6 +2,7 @@
 
 import React, { createContext, useCallback, useContext, useEffect, useState } from 'react';
 import { Plus } from 'lucide-react';
+import { gmailComposeUrl } from '@/lib/site-data';
 
 interface AccordionContextValue {
   openId: string | null;
@@ -86,7 +87,9 @@ export function CollapsibleAccordionItem({
         <div className="institutional-expandable__content">
           {id.startsWith('fw-') ? (
             <a
-              href={`mailto:jowihfoundationorg@gmail.com?subject=${encodeURIComponent(`More information: ${title}`)}`}
+              href={gmailComposeUrl(`More information: ${title}`)}
+              target="_blank"
+              rel="noopener noreferrer"
               className="framework-source-link"
             >
               CONTACT FOR MORE INFO <span aria-hidden="true">↗</span>

@@ -1841,6 +1841,68 @@ main > div > div:first-child[class*="pt-32"] {
   }
 }
 
+.institutional-home .institutional-section--sage,
+.institutional-home .institutional-section--gallery {
+  background: #f0f2ed;
+}
+
+.institutional-home .institutional-section--ink,
+.institutional-home .institutional-founder {
+  background: #173d30;
+}
+
+.institutional-home .institutional-expandable,
+.institutional-home .institutional-pillar,
+.institutional-home .institutional-program,
+.institutional-home .institutional-cde,
+.institutional-home .institutional-corridor-list,
+.institutional-home .institutional-corridor-figure,
+.institutional-home .institutional-gallery__item,
+.institutional-home .institutional-partnership-card,
+.institutional-home .institutional-donation-banner,
+.institutional-home .institutional-adfa-strip,
+.institutional-home .institutional-accountability,
+.institutional-home .institutional-hero__grid-cell,
+.institutional-home .institutional-hero__image-note,
+.institutional-home .institutional-news__featured-img,
+.institutional-home .institutional-news__thumb,
+.institutional-home .institutional-subscribe__form input,
+.institutional-home .institutional-subscribe__form button,
+.institutional-home .institutional-button {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.institutional-home .institutional-principles__grid span,
+.institutional-home .institutional-partnership-card__icon,
+.institutional-home .institutional-partnership-card__type,
+.institutional-home .institutional-layer,
+.institutional-home .institutional-donation-banner__icon,
+.institutional-home .institutional-news__tabs button {
+  border-radius: 0;
+}
+
+.institutional-home .institutional-partnership-card,
+.institutional-home .institutional-pillar,
+.institutional-home .institutional-program,
+.institutional-home .institutional-cde,
+.institutional-home .institutional-gallery__item {
+  transition: border-color 180ms ease, background-color 180ms ease;
+}
+
+.institutional-home .institutional-button:hover {
+  transform: none;
+}
+
+.institutional-home .institutional-partnership-card:hover,
+.institutional-home .institutional-pillar:hover,
+.institutional-home .institutional-program:hover,
+.institutional-home .institutional-cde:hover,
+.institutional-home .institutional-gallery__item:hover {
+  transform: none;
+  box-shadow: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .institutional-home *,
   .institutional-home *::before,

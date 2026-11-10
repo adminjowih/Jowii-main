@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ArrowUpRight, MapPin, Calendar, Mail } from 'lucide-react';
-import { siteData } from '@/lib/site-data';
+import { gmailComposeUrl, siteData } from '@/lib/site-data';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -105,7 +105,9 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               <span>29 October 2026 · 8:00 PM EAT</span>
             </div>
             <a
-              href={`mailto:${siteData.config.fallbackEmail}`}
+              href={gmailComposeUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 hover:text-white transition-colors"
             >
               <Mail className="w-4 h-4" />

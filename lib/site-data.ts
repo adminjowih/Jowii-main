@@ -852,3 +852,13 @@ export const siteData = {
     },
   ],
 };
+
+export function gmailComposeUrl(subject?: string): string {
+  const params = new URLSearchParams({
+    view: 'cm',
+    fs: '1',
+    to: siteData.config.fallbackEmail,
+  });
+  if (subject) params.set('su', subject);
+  return `https://mail.google.com/mail/?${params.toString()}`;
+}

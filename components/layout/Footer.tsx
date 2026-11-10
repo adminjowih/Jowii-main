@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Mail, MapPin } from 'lucide-react';
 import { SocialIcon } from '@/components/icons/SocialIcons';
-import { siteData } from '@/lib/site-data';
+import { gmailComposeUrl, siteData } from '@/lib/site-data';
 
 export function Footer() {
   const currentYear = 2026;
@@ -42,7 +42,9 @@ export function Footer() {
               <div className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5 text-[#FF5000]" />
                 <a
-                  href={`mailto:${siteData.config.fallbackEmail}`}
+                  href={gmailComposeUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-white underline underline-offset-4 decoration-white/20 transition-colors"
                 >
                   {siteData.config.fallbackEmail}
