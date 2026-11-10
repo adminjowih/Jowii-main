@@ -21,9 +21,9 @@ const institutionalSans = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://jowih.africa'),
-  title: 'Jowih Foundation | A Continental Development Framework',
+  title: 'Jowih Foundation | Contact Us',
   description:
-    'Explore the proposed Jowih Foundation, Great African Grid and ASTA OS architecture, including its donation-led structural pre-launch and institutional source papers.',
+    'Jowih Foundation is developing African-led ideas for connected infrastructure, digital systems, and community opportunity. Get in touch.',
   keywords: [
     'Jowih',
     'Jowih Ecosystem',
@@ -38,9 +38,9 @@ export const metadata: Metadata = {
     apple: '/assets/foundation%20logo.png',
   },
   openGraph: {
-    title: 'Jowih Foundation | A Continental Development Framework',
+    title: 'Jowih Foundation | Contact Us',
     description:
-      'A proposed mission-led framework connecting infrastructure, services, capital and technology across Africa.',
+      'African-led ideas for connected infrastructure, digital systems, and community opportunity.',
     images: ['/documents/sample%20images/HEROGAG.png.png'],
   },
 };

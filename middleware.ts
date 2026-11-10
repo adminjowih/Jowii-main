@@ -23,7 +23,30 @@ const securityHeaders = {
 };
 
 export function middleware(request: NextRequest) {
-  const response = NextResponse.next();
+  const { pathname } = request.nextUrl;
+  const hiddenSections = [
+    '/about',
+    '/credits',
+    '/governance',
+    '/horizon-2045',
+    '/news',
+    '/search',
+  ];
+  const isHiddenSection = hiddenSections.some(
+    (section) => pathname === section || pathname.startsWith(`${section}/`),
+  );
+  const isDocumentTextOrPdf =
+    pathname.startsWith('/documents/') && /\.(pdf|txt)$/i.test(pathname);
+  const response =
+    isHiddenSection ||
+    pathname === '/documents' ||
+    pathname === '/documents/' ||
+    pathname === '/documents/read' ||
+    pathname.startsWith('/documents/read/') ||
+    isDocumentTextOrPdf
+      ? NextResponse.redirect(new URL('/#contact', request.url))
+      : NextResponse.next();
+
   Object.entries(securityHeaders).forEach(([name, value]) => response.headers.set(name, value));
   response.headers.set('x-request-id', crypto.randomUUID());
   return response;

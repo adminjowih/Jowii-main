@@ -62,6 +62,7 @@ export const siteData = {
   config: {
     eventDate: '2026-10-29T20:00:00+03:00',
     fallbackEmail: 'jowihfoundationorg@gmail.com',
+    phone: '+254757378242',
     whatsappCommunity: 'https://chat.whatsapp.com/HqadK4W3gBvD7x4Mq90Z4m?s=cl&p=a&mlu=4&ilr=4',
     discordCommunity: 'https://discord.gg/E6VpXqV2W',
     location: 'Kisii, Kenya',

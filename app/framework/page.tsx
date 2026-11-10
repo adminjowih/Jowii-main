@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { ArrowLeft, Download } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { CollapsibleAccordion, CollapsibleAccordionItem } from '@/components/ui/CollapsibleAccordion';
 
 export default function FrameworkPage() {
@@ -33,24 +33,14 @@ export default function FrameworkPage() {
       <div className="py-16 pb-24" style={{ background: 'var(--paper)', color: 'var(--ink)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
 
-          {/* Intro & Download */}
+          {/* Intro */}
           <section className="space-y-6">
             <h2 className="text-2xl sm:text-3xl uppercase tracking-tight" style={{ fontFamily: 'var(--font-serif)', fontWeight: 400 }}>
               Implementation Frameworks
             </h2>
             <p className="leading-relaxed">
-              Select a framework to view its overview or open the complete source section.
+              Explore the implementation frameworks below.
             </p>
-            <a
-              href="/documents/The%20GAG%20initiative%20.pdf"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider px-5 py-3 border transition-colors hover:opacity-80"
-              style={{ borderColor: 'var(--ink)', color: 'var(--ink)' }}
-            >
-              <Download className="w-4 h-4" />
-              <span>Download The GAG Initiative document &mdash; full concept</span>
-            </a>
           </section>
 
           {/* Frameworks Accordion */}
