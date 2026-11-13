@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import { ArrowRight, ArrowUpRight, FileText, ShieldCheck } from 'lucide-react';
+import { ArrowUpRight, FileText, ShieldCheck } from 'lucide-react';
 import { GagInterestDialog } from '@/components/pages/GagInterestDialog';
 
 export const metadata: Metadata = {
@@ -21,11 +20,6 @@ const sourceDocuments = [
     title: 'Jowih Foundation Constitution',
     href: '/documents/JOWIH%20FOUNDATION.pdf',
     detail: 'Article V: primary funding source, Mission Fund purpose, budget process, and financial controls.',
-  },
-  {
-    title: 'Ecosystem Investment Architecture',
-    href: '/documents/JOWIH%20ECOSYSTEM%20INVESTMENT%20ARCHITECTURE.pdf',
-    detail: 'Holding structure and economic allocation architecture.',
   },
   {
     title: 'The GAG Initiative',
@@ -54,9 +48,6 @@ export default function MissionFundPage() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <GagInterestDialog triggerLabel="Read detail" interest="Mission Fund allocation" />
-            <Link href="/funding" className="inline-flex min-h-11 items-center gap-2 border border-white/60 px-5 text-xs font-bold uppercase tracking-wide text-white hover:bg-white/10">
-              Funding architecture <ArrowUpRight aria-hidden="true" size={15} />
-            </Link>
           </div>
         </div>
       </header>
@@ -151,26 +142,6 @@ export default function MissionFundPage() {
                 </article>
               ))}
             </div>
-          </div>
-        </section>
-
-        <section className="border p-6 sm:p-9" style={{ background: 'var(--sage)', borderColor: 'var(--line)' }}>
-          <p className="text-xs font-bold uppercase tracking-[0.16em]" style={{ color: 'var(--green)' }}>FUNDING CHANNELS</p>
-          <h2 className="mt-2 text-2xl sm:text-3xl" style={{ fontFamily: 'var(--font-serif)', fontWeight: 400 }}>
-            Mission funding, pre-launch contributions, and investment capital.
-          </h2>
-          <div className="mt-5 grid gap-5 text-sm leading-relaxed md:grid-cols-3" style={{ color: 'var(--ink-soft)' }}>
-            <p><strong className="text-[var(--ink)]">Mission Fund:</strong> Foundation resources ring-fenced for Great African Grid mission activities.</p>
-            <p><strong className="text-[var(--ink)]">Pre-launch contributions:</strong> donations support legal registration and structural setup; they confer no ownership, repayment, or governance rights.</p>
-            <p><strong className="text-[var(--ink)]">Investment capital:</strong> the Grid Bond and Ecosystem Investment Fund are separate financing structures with distinct purposes.</p>
-          </div>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link className="inline-flex min-h-11 items-center gap-2 bg-[var(--green)] px-5 text-xs font-bold uppercase tracking-wide text-white hover:bg-[var(--green-deep)]" href="/funding">
-              Funding overview <ArrowRight aria-hidden="true" size={15} />
-            </Link>
-            <Link className="inline-flex min-h-11 items-center gap-2 border border-[var(--green)] px-5 text-xs font-bold uppercase tracking-wide text-[var(--green)] hover:bg-white" href="/donate">
-              Pre-launch support information <ArrowUpRight aria-hidden="true" size={15} />
-            </Link>
           </div>
         </section>
 
