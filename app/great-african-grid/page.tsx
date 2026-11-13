@@ -13,6 +13,7 @@ import {
 import { siteData } from '@/lib/site-data';
 import { Button } from '@/components/ui/Button';
 import { GagFrameworkIndex } from '@/components/pages/GagFrameworkIndex';
+import { GagInterestDialog } from '@/components/pages/GagInterestDialog';
 
 export default function GreatAfricanGridPage() {
   const { gag } = siteData;
@@ -49,6 +50,9 @@ export default function GreatAfricanGridPage() {
         <p className="text-lg sm:text-2xl max-w-3xl mt-6 leading-relaxed font-sans" style={{ color: 'var(--ink-soft)' }}>
           {gag.lead}
         </p>
+        <div className="mt-7">
+          <GagInterestDialog />
+        </div>
 
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 text-sm border-t pt-8" style={{ color: 'var(--muted)', borderColor: 'var(--line)' }}>
           {gag.what.map((p, idx) => (
