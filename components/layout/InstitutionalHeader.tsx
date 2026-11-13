@@ -40,26 +40,14 @@ export function InstitutionalHeader() {
               Jowih Foundation
             </span>
           </Link>
-          <div className="hidden items-center gap-5 sm:flex">
-            <a
-              href={`tel:${siteData.config.phone}`}
-              aria-label={`Call ${siteData.config.phone}`}
-              className="inline-flex items-center gap-2 text-sm font-medium text-neutral-700 hover:text-[#1a4d2e]"
-            >
-              <Phone aria-hidden="true" size={15} />
-              {siteData.config.phone}
-            </a>
-            <a
-              href={`https://wa.me/${siteData.config.whatsappPhone}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Message us on WhatsApp at ${siteData.config.whatsappDisplay}`}
-              className="inline-flex items-center gap-2 text-sm font-medium text-neutral-700 hover:text-[#1a4d2e]"
-            >
-              <MessageCircle aria-hidden="true" size={15} />
-              WhatsApp {siteData.config.whatsappDisplay}
-            </a>
-          </div>
+          <a
+            href={`tel:${siteData.config.phone}`}
+            aria-label={`Call ${siteData.config.phone}`}
+            className="hidden items-center gap-2 text-sm font-medium text-neutral-700 hover:text-[#1a4d2e] sm:inline-flex"
+          >
+            <Phone aria-hidden="true" size={15} />
+            {siteData.config.phone}
+          </a>
         </div>
       </div>
 
@@ -146,16 +134,6 @@ export function InstitutionalHeader() {
             >
               <Phone aria-hidden="true" size={16} />
               {siteData.config.phone}
-            </a>
-            <a
-              href={`https://wa.me/${siteData.config.whatsappPhone}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setMobileMenuOpen(false)}
-              className="inline-flex items-center gap-2 py-3 text-sm font-semibold text-[#1a4d2e]"
-            >
-              <MessageCircle aria-hidden="true" size={16} />
-              WhatsApp {siteData.config.whatsappDisplay}
             </a>
             <div className="flex flex-wrap items-center gap-x-5 gap-y-3 border-t border-neutral-200 py-4">
               {siteData.socialMedia.map((social) => (
