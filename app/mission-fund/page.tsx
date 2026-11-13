@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, ArrowUpRight, FileText, ShieldCheck } from 'lucide-react';
+import { GagInterestDialog } from '@/components/pages/GagInterestDialog';
 
 export const metadata: Metadata = {
   title: 'Mission Fund | Jowih Foundation',
@@ -24,7 +25,7 @@ const sourceDocuments = [
   {
     title: 'Ecosystem Investment Architecture',
     href: '/documents/JOWIH%20ECOSYSTEM%20INVESTMENT%20ARCHITECTURE.pdf',
-    detail: 'The broader proposed ownership and economic allocation model, distinct from the Mission Fund itself.',
+    detail: 'Holding structure and economic allocation architecture.',
   },
   {
     title: 'The GAG Initiative',
@@ -42,19 +43,17 @@ export default function MissionFundPage() {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em]" style={{ color: 'var(--brass)' }}>
-            JOWIH FOUNDATION · PUBLIC OVERVIEW
+            JOWIH FOUNDATION · DEVELOPMENT FINANCE
           </p>
           <h1 className="max-w-4xl text-4xl leading-[1.04] sm:text-6xl" style={{ fontFamily: 'var(--font-serif)', fontWeight: 400 }}>
             The Mission Fund
           </h1>
           <p className="mt-6 max-w-3xl text-base leading-relaxed sm:text-xl" style={{ color: 'rgba(255,254,250,.78)' }}>
-            The Foundation’s ring-fenced fund for mission activities under the Great African Grid. Article V of the
-            Foundation Constitution sets out its funding allocation, intended uses, and financial controls.
+            The ring-fenced Jowih Foundation fund for Great African Grid mission activities. Article V establishes its
+            funding allocation, mission use, annual budgeting, and financial controls.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#allocation" className="inline-flex min-h-11 items-center gap-2 bg-white px-5 text-xs font-bold uppercase tracking-wide text-[var(--ink)] hover:bg-[var(--sage)]">
-              The constitutional allocation <ArrowRight aria-hidden="true" size={15} />
-            </a>
+            <GagInterestDialog triggerLabel="Read detail" interest="Mission Fund allocation" />
             <Link href="/funding" className="inline-flex min-h-11 items-center gap-2 border border-white/60 px-5 text-xs font-bold uppercase tracking-wide text-white hover:bg-white/10">
               Funding architecture <ArrowUpRight aria-hidden="true" size={15} />
             </Link>
@@ -75,25 +74,14 @@ export default function MissionFundPage() {
           </div>
           <div className="space-y-4 lg:col-span-8">
             <h2 className="text-2xl sm:text-3xl" style={{ fontFamily: 'var(--font-serif)', fontWeight: 400 }}>
-              How the allocation is stated
+              A 90% mission reinvestment allocation
             </h2>
             <p className="leading-relaxed" style={{ color: 'var(--ink-soft)' }}>
-              Article V.1 identifies the initial received Bond and the designated share of Jowih Holding Company
-              dividends as Foundation revenue. It states that not less than 90% of profits is allocated to the
-              Foundation, with the allocation set out through a Jowih Company–Foundation Remittance Agreement. The
-              remaining 10% of dividends is designated for the Founder Family Trust.
-            </p>
-            <p className="text-sm leading-relaxed" style={{ color: 'var(--ink-soft)' }}>
-              In practical terms, the 90% applies to <strong>profits</strong>, not gross revenue. The Foundation’s
-              constitutional preamble describes those commercial returns as being devoted to the Mission Fund and
-              reinvested in continental development; Article V.3 limits Mission Fund use to GAG mission activities.
-            </p>
-            <p className="border-l-4 p-5 text-sm leading-relaxed" style={{ background: 'var(--sage)', borderColor: 'var(--brass)', color: 'var(--ink-soft)' }}>
-              <strong className="text-[var(--ink)]">Reading the source accurately:</strong> the Constitution’s
-              preamble contains the phrase “eighty percent (90%),” while Article V.1 states “not less than 90%.” This
-              page follows the specific Article V.1 allocation. The Foundation PDF is marked “Draft Constitution”; the
-              text also makes the remittance agreement part of the allocation mechanism. The stated allocation is not
-              a claim that transfers or Fund operations are already underway.
+              Article V.1 allocates not less than 90% of Jowih Holding Company profits to the Foundation. These
+              resources are directed to mission activities through the ring-fenced Mission Fund and continental
+              development programs. The remaining 10% of Holding Company dividends is designated for the Founder
+              Family Trust. The Foundation Remittance Agreement governs the allocation between the Foundation and
+              operating companies.
             </p>
           </div>
         </section>
@@ -101,25 +89,27 @@ export default function MissionFundPage() {
         <section className="grid gap-5 border-y py-10 sm:grid-cols-3" style={{ borderColor: 'var(--line)' }} aria-label="Mission Fund summary">
           <article>
             <p className="text-xs font-bold uppercase tracking-wider" style={{ color: 'var(--green)' }}>Purpose</p>
-            <p className="mt-2 text-sm leading-relaxed">Article V.3 defines the Mission Fund as ring-fenced and used only for mission activities under the GAG.</p>
+            <p className="mt-2 text-sm leading-relaxed">Ring-fenced funding for mission activities under the Great African Grid.</p>
+            <div className="mt-4"><GagInterestDialog triggerLabel="Read detail" interest="Mission Fund purpose" compact /></div>
           </article>
           <article>
-            <p className="text-xs font-bold uppercase tracking-wider" style={{ color: 'var(--green)' }}>Allocation</p>
-            <p className="mt-2 text-sm leading-relaxed">The Foundation Constitution states a minimum 90% allocation of Jowih Holding Company profits to the Foundation.</p>
+            <p className="text-xs font-bold uppercase tracking-wider" style={{ color: 'var(--green)' }}>Funding allocation</p>
+            <p className="mt-2 text-sm leading-relaxed">At least 90% of Jowih Holding Company profits is allocated to the Foundation for mission reinvestment.</p>
+            <div className="mt-4"><GagInterestDialog triggerLabel="Read detail" interest="the 90% Mission Fund allocation" compact /></div>
           </article>
           <article>
-            <p className="text-xs font-bold uppercase tracking-wider" style={{ color: 'var(--green)' }}>Status</p>
-            <p className="mt-2 text-sm leading-relaxed">The linked Constitution is marked draft. This page does not represent that the fund is capitalized or disbursing.</p>
+            <p className="text-xs font-bold uppercase tracking-wider" style={{ color: 'var(--green)' }}>Annual budget</p>
+            <p className="mt-2 text-sm leading-relaxed">The Foundation budget allocates resources across operations, pilot projects, and reserves.</p>
+            <div className="mt-4"><GagInterestDialog triggerLabel="Read detail" interest="Mission Fund budgeting" compact /></div>
           </article>
         </section>
 
         <section id="pillars" className="space-y-7">
           <div className="max-w-3xl">
-            <p className="text-xs font-bold uppercase tracking-[0.16em]" style={{ color: 'var(--green)' }}>INTENDED MISSION AREAS</p>
+            <p className="text-xs font-bold uppercase tracking-[0.16em]" style={{ color: 'var(--green)' }}>STRATEGIC PRIORITIES</p>
             <h2 className="mt-2 text-3xl sm:text-4xl" style={{ fontFamily: 'var(--font-serif)', fontWeight: 400 }}>Four strategic pillars</h2>
             <p className="mt-3 text-sm leading-relaxed" style={{ color: 'var(--muted)' }}>
-              The Foundation Constitution names these priorities. They describe the mission framework, not a claim that
-              specific programs have already been funded or delivered.
+              Mission Fund allocations support the Foundation’s work across these four priorities.
             </p>
           </div>
           <div className="grid gap-px border sm:grid-cols-2 lg:grid-cols-4" style={{ background: 'var(--line)', borderColor: 'var(--line)' }}>
@@ -139,21 +129,21 @@ export default function MissionFundPage() {
               <ShieldCheck aria-hidden="true" size={22} />
             </div>
             <p className="text-xs font-bold uppercase tracking-[0.16em]" style={{ color: 'var(--green)' }}>ARTICLE V · SAFEGUARDS</p>
-            <h2 className="mt-2 text-3xl" style={{ fontFamily: 'var(--font-serif)', fontWeight: 400 }}>Budgeted and accountable use</h2>
+            <h2 className="mt-2 text-3xl" style={{ fontFamily: 'var(--font-serif)', fontWeight: 400 }}>Financial controls and reporting</h2>
           </div>
           <div className="space-y-5 md:col-span-8">
             <p className="text-sm leading-relaxed" style={{ color: 'var(--ink-soft)' }}>
-              Article V.3 provides for an annual budget with allocations to core areas such as operations, pilot projects,
-              and reserves, while prioritizing seed and capital expenditure to scale social programs. Article V.4
-              describes approval, procurement, and audit controls. These are provisions in the linked Constitution;
-              their implementation depends on the Foundation’s legal and operational arrangements.
+              Article V.3 requires an annual budget covering operations, pilot projects, and reserves, with priority for
+              seed and capital expenditure to scale social programs. Article V.4 requires two signatories for
+              expenditures above the defined threshold, competitive procurement above defined thresholds, and
+              quarterly and annual audited financial statements.
             </p>
             <div className="grid gap-3 sm:grid-cols-2">
               {[
-                ['Ring-fenced purpose', 'Fund use is limited to mission activities under the GAG.'],
-                ['Annual budget', 'The Foundation adopts a budget and sets allocations across core areas.'],
-                ['Spending controls', 'Expenditures above a defined threshold require two signatories.'],
-                ['Procurement and audit', 'The text provides for competitive procurement above thresholds and quarterly and annual audited statements.'],
+                ['Ring-fenced purpose', 'The Fund is used exclusively for mission activities under the GAG.'],
+                ['Annual budget', 'Allocations cover operations, pilot projects, and reserves.'],
+                ['Spending approvals', 'Expenditures above the defined threshold require two signatories.'],
+                ['Procurement and audit', 'Above-threshold procurement uses open tender or competitive bidding; financial statements are audited quarterly and annually.'],
               ].map(([title, detail]) => (
                 <article key={title} className="border p-4" style={{ background: 'var(--white)', borderColor: 'var(--line)' }}>
                   <h3 className="text-sm font-bold">{title}</h3>
@@ -165,14 +155,14 @@ export default function MissionFundPage() {
         </section>
 
         <section className="border p-6 sm:p-9" style={{ background: 'var(--sage)', borderColor: 'var(--line)' }}>
-          <p className="text-xs font-bold uppercase tracking-[0.16em]" style={{ color: 'var(--green)' }}>KEEP THE FUNDING PATHS DISTINCT</p>
+          <p className="text-xs font-bold uppercase tracking-[0.16em]" style={{ color: 'var(--green)' }}>FUNDING CHANNELS</p>
           <h2 className="mt-2 text-2xl sm:text-3xl" style={{ fontFamily: 'var(--font-serif)', fontWeight: 400 }}>
-            Mission Fund, pre-launch support, and investment are separate.
+            Mission funding, pre-launch contributions, and investment capital.
           </h2>
           <div className="mt-5 grid gap-5 text-sm leading-relaxed md:grid-cols-3" style={{ color: 'var(--ink-soft)' }}>
-            <p><strong className="text-[var(--ink)]">Mission Fund:</strong> the ring-fenced Foundation mechanism described in Article V.3 for mission spending.</p>
-            <p><strong className="text-[var(--ink)]">Pre-launch support:</strong> the site’s current support path is donation-only and does not offer ownership or financial returns.</p>
-            <p><strong className="text-[var(--ink)]">Investment:</strong> bonds and regulated fund structures are not currently available as offers on this site.</p>
+            <p><strong className="text-[var(--ink)]">Mission Fund:</strong> Foundation resources ring-fenced for Great African Grid mission activities.</p>
+            <p><strong className="text-[var(--ink)]">Pre-launch contributions:</strong> donations support legal registration and structural setup; they confer no ownership, repayment, or governance rights.</p>
+            <p><strong className="text-[var(--ink)]">Investment capital:</strong> the Grid Bond and Ecosystem Investment Fund are separate financing structures with distinct purposes.</p>
           </div>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link className="inline-flex min-h-11 items-center gap-2 bg-[var(--green)] px-5 text-xs font-bold uppercase tracking-wide text-white hover:bg-[var(--green-deep)]" href="/funding">
@@ -187,7 +177,7 @@ export default function MissionFundPage() {
         <section className="space-y-5 border-t pt-10" style={{ borderColor: 'var(--line)' }}>
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.16em]" style={{ color: 'var(--green)' }}>SOURCE DOCUMENTS</p>
-            <h2 className="mt-2 text-2xl sm:text-3xl" style={{ fontFamily: 'var(--font-serif)', fontWeight: 400 }}>Read the source papers</h2>
+            <h2 className="mt-2 text-2xl sm:text-3xl" style={{ fontFamily: 'var(--font-serif)', fontWeight: 400 }}>Source documents</h2>
           </div>
           <div className="grid gap-3 md:grid-cols-3">
             {sourceDocuments.map((source) => (
@@ -200,12 +190,6 @@ export default function MissionFundPage() {
               </a>
             ))}
           </div>
-          <p className="max-w-4xl text-xs leading-relaxed" style={{ color: 'var(--muted)' }}>
-            This page summarizes the linked source documents for general information. The Foundation PDF is marked
-            “Draft Constitution”; formal registration, remittance agreements, budgets, and operating arrangements are
-            distinct from the figures and controls described in the text. No investment, return, current balance, or
-            disbursement is represented here.
-          </p>
         </section>
       </div>
     </div>

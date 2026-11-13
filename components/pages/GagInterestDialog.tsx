@@ -1,20 +1,20 @@
 'use client';
 
-import { useRef } from 'react';
+import { useId, useRef } from 'react';
 import { ArrowUpRight, X } from 'lucide-react';
 import { siteData } from '@/lib/site-data';
 
 const contactEmail = siteData.config.fallbackEmail;
-const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(contactEmail)}&su=${encodeURIComponent('GAG enquiry or expression of interest')}&body=${encodeURIComponent('Hello Jowih Foundation,\n\nI am contacting you regarding the Great African Grid (GAG).\n\nName / organisation:\nArea of interest:\nMessage:\n')}`;
-
-export function GagInterestDialog({ triggerLabel = 'Read more' }: { triggerLabel?: string }) {
+export function GagInterestDialog({ triggerLabel = 'Read more', interest = 'the Great African Grid', compact = false }: { triggerLabel?: string; interest?: string; compact?: boolean }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
+  const titleId = useId();
+  const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(contactEmail)}&su=${encodeURIComponent(`Request for information: ${interest}`)}&body=${encodeURIComponent(`Hello Jowih Foundation,\n\nI would like to request more information about ${interest}.\n\nName / organisation:\nMessage:\n`)}`;
 
   return (
     <>
       <button
         type="button"
-        className="gag-interest-trigger"
+        className={`gag-interest-trigger${compact ? ' gag-interest-trigger--compact' : ''}`}
         onClick={() => dialogRef.current?.showModal()}
         aria-haspopup="dialog"
       >
@@ -24,7 +24,7 @@ export function GagInterestDialog({ triggerLabel = 'Read more' }: { triggerLabel
       <dialog
         ref={dialogRef}
         className="gag-interest-dialog"
-        aria-labelledby="gag-interest-title"
+        aria-labelledby={titleId}
         onClick={(event) => {
           if (event.target === dialogRef.current) dialogRef.current?.close();
         }}
@@ -38,15 +38,13 @@ export function GagInterestDialog({ triggerLabel = 'Read more' }: { triggerLabel
           >
             <X aria-hidden="true" size={19} />
           </button>
-          <p className="institutional-eyebrow">GREAT AFRICAN GRID · ENQUIRIES</p>
-          <h2 id="gag-interest-title">Start a conversation about GAG.</h2>
+          <p className="institutional-eyebrow">JOWIH FOUNDATION · ENQUIRIES</p>
+          <h2 id={titleId}>Request more information</h2>
           <p>
-            Interested in a corridor, a potential partnership, or learning more about the framework? Contact the Jowih
-            Foundation with your enquiry or expression of interest. We’ll respond with the appropriate next steps.
+            Contact the Jowih Foundation for additional information about {interest}.
           </p>
           <div className="gag-interest-dialog__note">
-            Gmail will open with a draft addressed to <strong>{contactEmail}</strong>. You can review and edit it before
-            sending.
+            A Gmail draft addressed to <strong>{contactEmail}</strong> will open for completion and submission.
           </div>
           <div className="gag-interest-dialog__actions">
             <a href={gmailComposeUrl} target="_blank" rel="noopener noreferrer">

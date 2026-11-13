@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowUpRight, FileText } from 'lucide-react';
 import { siteData } from '@/lib/site-data';
+import { GagInterestDialog } from '@/components/pages/GagInterestDialog';
 
 export function GagFrameworkIndex() {
   const groups = [...new Set(siteData.gag.frameworks.map((framework) => framework.group))];
@@ -23,11 +24,11 @@ export function GagFrameworkIndex() {
           <h3>{group}</h3>
           <div className="gag-framework-group__list">
             {siteData.gag.frameworks.filter((framework) => framework.group === group).map((framework, index) => (
-              <Link className="gag-framework-entry" href={`/documents#gag-framework-${framework.id}`} key={framework.id}>
+              <article className="gag-framework-entry" key={framework.id}>
                 <span>{String(index + 1).padStart(2, '0')}</span>
                 <div><h4>{framework.title}</h4><p>{framework.detail}</p></div>
-                <small>Read detail <ArrowUpRight aria-hidden="true" size={13} /></small>
-              </Link>
+                <GagInterestDialog triggerLabel="Read detail" interest={framework.title} compact />
+              </article>
             ))}
           </div>
         </div>
