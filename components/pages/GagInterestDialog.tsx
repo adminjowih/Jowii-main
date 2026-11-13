@@ -7,7 +7,7 @@ import { siteData } from '@/lib/site-data';
 const contactEmail = siteData.config.fallbackEmail;
 const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(contactEmail)}&su=${encodeURIComponent('GAG enquiry or expression of interest')}&body=${encodeURIComponent('Hello Jowih Foundation,\n\nI am contacting you regarding the Great African Grid (GAG).\n\nName / organisation:\nArea of interest:\nMessage:\n')}`;
 
-export function GagInterestDialog() {
+export function GagInterestDialog({ triggerLabel = 'Read more' }: { triggerLabel?: string }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   return (
@@ -18,7 +18,7 @@ export function GagInterestDialog() {
         onClick={() => dialogRef.current?.showModal()}
         aria-haspopup="dialog"
       >
-        Read more <ArrowUpRight aria-hidden="true" size={15} />
+        {triggerLabel} <ArrowUpRight aria-hidden="true" size={15} />
       </button>
 
       <dialog

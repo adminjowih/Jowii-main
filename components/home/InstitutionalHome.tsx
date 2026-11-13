@@ -28,6 +28,7 @@ import {
 } from 'lucide-react';
 import { InstitutionalNewsletter } from '@/components/home/InstitutionalNewsletter';
 import { InstitutionalNews } from '@/components/home/InstitutionalNews';
+import { GagInterestDialog } from '@/components/pages/GagInterestDialog';
 import { InstitutionalExpandable, type ExpandableItem } from '@/components/ui/InstitutionalExpandable';
 import { InstitutionalHeroSlideshow } from '@/components/home/InstitutionalHeroSlideshow';
 import { LightboxImage } from '@/components/ui/ImageLightbox';
@@ -1043,6 +1044,9 @@ export function InstitutionalHome() {
               />
               <figcaption><span>Illustrative concept</span> AI-assisted visual; projects and facilities shown are proposed, not represented as built or operating.</figcaption>
             </figure>
+          </div>
+          <div className="mt-6">
+            <GagInterestDialog />
           </div>
           <div className="institutional-adfa-strip">
             <div><Waypoints aria-hidden="true" /><h3>ADFA: a voluntary framework with participating states</h3></div>

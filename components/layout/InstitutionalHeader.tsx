@@ -11,6 +11,8 @@ import { gmailComposeUrl, siteData } from '@/lib/site-data';
 const navigation = [
   { label: 'Home', href: '/' },
   { label: 'Framework', href: '/framework' },
+  { label: 'GAG Initiative', href: '/gag' },
+  { label: 'Mission Fund', href: '/mission-fund' },
 ];
 
 export function InstitutionalHeader() {

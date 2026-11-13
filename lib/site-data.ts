@@ -123,7 +123,7 @@ export const siteData = {
       ]
     },
     { 
-      label: 'Great African Grid', 
+      label: 'GAG Initiative',
       href: '/gag',
       description: '7 infrastructure corridors powering continental development',
       children: [
@@ -158,6 +158,16 @@ export const siteData = {
         { label: 'Grid Bond', href: '/funding#grid-bond' },
         { label: 'Pre-Launch Support', href: '/donate' },
       ]
+    },
+    {
+      label: 'Mission Fund',
+      href: '/mission-fund',
+      description: 'The Foundation Constitution’s Mission Fund allocation and public framework',
+      children: [
+        { label: 'Overview', href: '/mission-fund' },
+        { label: 'Mission pillars', href: '/mission-fund#pillars' },
+        { label: 'Governance & controls', href: '/mission-fund#governance' },
+      ],
     },
     { 
       label: 'Governance', 
