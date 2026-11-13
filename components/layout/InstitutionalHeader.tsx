@@ -107,19 +107,21 @@ export function InstitutionalHeader() {
               href={`https://wa.me/${siteData.config.whatsappPhone}`}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`Message us on WhatsApp at ${siteData.config.whatsappDisplay}`}
               className="inline-flex min-h-9 items-center gap-2 border border-white/60 px-3 text-xs font-bold uppercase tracking-wider text-white hover:bg-white hover:text-[#1a4d2e]"
             >
               <MessageCircle aria-hidden="true" size={14} />
-              <span className="hidden sm:inline">WhatsApp</span>
+              <span>{siteData.config.whatsappDisplay}</span>
             </a>
             <a
               href={gmailComposeUrl()}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Contact Jowih Foundation by email"
               className="inline-flex min-h-9 items-center gap-2 border border-white/60 px-3 text-xs font-bold uppercase tracking-wider text-white hover:bg-white hover:text-[#1a4d2e]"
             >
               <Mail aria-hidden="true" size={14} />
-              Contact
+              <span className="hidden sm:inline">Contact</span>
             </a>
           </div>
         </div>
